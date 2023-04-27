@@ -15,6 +15,13 @@ router.post(
   usersController.postUser
 );
 
+router.put(
+  '/:id',
+  upload.single('image'),
+  usersController.updateValidation(),
+  usersController.updateUser
+);
+
 router.delete('/:id', usersController.deleteUser);
 
 module.exports = router;
